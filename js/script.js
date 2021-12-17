@@ -1,34 +1,29 @@
-function createNewSquareNoob(container) {
-    const square = document.createElement('div');
-    square.className = 'pezzo-di-campo';
-    container.append(square);
-
+function colorSquare(square) {
     square.addEventListener('click', function() {
         console.log(this); 
         this.classList.add('azure'); 
     });
+}
+
+function createNewSquareNoob(container) {
+    const square = document.createElement('div');
+    square.className = 'pezzo-di-campo';
+    container.append(square);
+    colorSquare(square);
 };
 
 function createNewSquarePro(container) {
     const square = document.createElement('div');
     square.className = 'pezzo-di-campo-pro';
     container.append(square);
-
-    square.addEventListener('click', function() {
-        console.log(this); 
-        this.classList.add('azure'); 
-    });
+    colorSquare(square);
 };
 
 function createNewSquareHacker(container) {
     const square = document.createElement('div');
     square.className = 'pezzo-di-campo-hacker';
     container.append(square);
-
-    square.addEventListener('click', function() {
-        console.log(this); 
-        this.classList.add('azure'); 
-    });
+    colorSquare(square);
 };
 
 let outputHtml = document.querySelector('.campominato-container');
@@ -58,3 +53,4 @@ btnHacker.addEventListener('click', function(){
         createNewSquareHacker(outputHtml);
     };
 });
+
